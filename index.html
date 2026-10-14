@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DVN Chewable Tablet · Konsultasi dengan Ce Silvi</title>
+  <meta name="description" content="Rawat dari luar, lengkapi dari dalam. DVN Chewable Tablet membantu menjaga kesehatan kulit dari dalam. Terdaftar BPOM & bersertifikat Halal. Konsultasi gratis dengan Ce Silvi.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+
+  <!-- TODO: Meta Pixel. Ganti PIXEL_ID lalu hapus tanda komentar.
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'PIXEL_ID');
+    fbq('track', 'PageView');
+    fbq('track', 'ViewContent', {content_name: 'DVN LP'});
+  </script>
+  -->
+
+  <style>
+    :root {
+      --bg: #fff7fa;
+      --surface: #ffffff;
+      --pink-50: #fff0f5;
+      --pink-100: #fde4ee;
+      --pink-200: #f8c9dc;
+      --rose-500: #e0578a;
+      --rose-600: #c83c70;
+      --rose-700: #a3214f;
+      --ink: #2d1a23;
+      --muted: #6e5762;
+      --line: #f1d6e1;
+      --wa: #1f9d55;
+      --wa-dark: #17824a;
+      --warn-bg: #fff6e8;
+      --warn-ink: #8a4b00;
+      --radius: 20px;
+      --shadow: 0 10px 30px -12px rgba(163, 33, 79, .25);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    h1, h2, h3 { line-height: 1.2; margin: 0 0 .5em; letter-spacing: -.01em; }
+    h1 { font-size: clamp(1.9rem, 6.5vw, 3rem); font-weight: 800; }
+    h2 { font-size: clamp(1.55rem, 5vw, 2.25rem); font-weight: 800; color: var(--rose-700); }
+    h3 { font-size: 1.05rem; font-weight: 700; }
+    p { margin: 0 0 1em; }
+    .accent { font-family: "Playfair Display", Georgia, serif; font-style: italic; font-weight: 600; color: var(--rose-600); }
+
+    .container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+    section { padding: 56px 0; }
+    .section-head { max-width: 640px; margin: 0 auto 32px; text-align: center; }
+    .section-head p { color: var(--muted); }
+    .kicker {
+      display: inline-block;
+      font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--rose-600); background: var(--pink-100);
+      padding: 6px 12px; border-radius: 999px; margin-bottom: 14px;
+    }
+    .alt { background: var(--surface); }
+    .small { font-size: .85rem; color: var(--muted); }
+
+    /* Placeholder: teks [..] yang wajib diganti sebelum live */
+    .ph-text { background: #fff3c4; color: #6b5200; padding: 0 4px; border-radius: 4px; }
+
+    /* Media: gambar asli di-load dari assets/. Jika belum ada, tampil kotak placeholder berlabel. */
+    .media {
+      position: relative; overflow: hidden; border-radius: var(--radius);
+      background: repeating-linear-gradient(135deg, var(--pink-100) 0 14px, var(--pink-50) 14px 28px);
+      border: 2px dashed var(--pink-200);
+      display: grid; place-items: center; text-align: center;
+    }
+    .media::before {
+      content: attr(data-label);
+      padding: 16px; font-size: .85rem; font-weight: 600; color: var(--rose-600);
+    }
+    .media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .media.has-img { border: 0; background: none; }
+
+    /* Header */
+    .topbar { background: var(--surface); border-bottom: 1px solid var(--line); }
+    .topbar .container { display: flex; align-items: center; justify-content: center; gap: 12px; height: 56px; }
+    .brand { font-family: "Playfair Display", Georgia, serif; font-size: 1.4rem; color: var(--rose-700); letter-spacing: .04em; }
+    .brand-sep { color: var(--pink-200); }
+    .brand-sub { font-size: .85rem; font-weight: 600; color: var(--rose-500); }
+
+    /* Buttons */
+    .btn-wa {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      min-height: 56px; padding: 14px 28px; border-radius: 999px;
+      background: var(--wa); color: #fff; text-decoration: none;
+      font-weight: 700; font-size: 1.02rem;
+      box-shadow: 0 10px 24px -10px rgba(31, 157, 85, .7);
+      transition: background .2s, transform .2s;
+    }
+    .btn-wa:hover { background: var(--wa-dark); transform: translateY(-1px); }
+    .btn-wa svg { width: 22px; height: 22px; flex: none; }
+    .cta-block { text-align: center; margin-top: 32px; }
+    .cta-note { margin-top: 10px; font-size: .85rem; color: var(--muted); }
+
+    /* Hero */
+    .hero { padding: 32px 0 48px; background: linear-gradient(180deg, var(--pink-100) 0%, var(--bg) 100%); }
+    .hero-grid { display: grid; gap: 28px; align-items: center; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: .85rem; font-weight: 600; color: var(--rose-700); background: var(--surface); padding: 6px 14px; border-radius: 999px; box-shadow: var(--shadow); margin-bottom: 18px; }
+    .hero-eyebrow .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--wa); }
+    .hero h1 em { font-style: normal; color: var(--rose-600); }
+    .hero-lead { font-size: 1.08rem; color: var(--muted); max-width: 520px; }
+    .hero-media { aspect-ratio: 4 / 5; box-shadow: var(--shadow); }
+    .trust { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 0; padding: 0; list-style: none; }
+    .trust li { display: inline-flex; align-items: center; gap: 6px; font-size: .82rem; font-weight: 600; background: var(--surface); border: 1px solid var(--line); padding: 6px 12px; border-radius: 999px; }
+    .trust svg { width: 16px; height: 16px; color: var(--rose-600); }
+    .hero .cta-block { text-align: left; margin-top: 24px; }
+
+    /* Problem */
+    .pain-grid { display: grid; gap: 14px; }
+    .pain {
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 20px; display: flex; gap: 14px; align-items: flex-start;
+    }
+    .pain .icon { flex: none; width: 40px; height: 40px; border-radius: 12px; background: var(--pink-100); color: var(--rose-600); display: grid; place-items: center; font-weight: 800; }
+    .pain p { margin: 0; color: var(--muted); font-size: .95rem; }
+    .insight {
+      margin-top: 28px; padding: 24px; border-radius: var(--radius);
+      background: var(--rose-700); color: #fff;
+    }
+    .insight h3 { color: #fff; font-size: 1.15rem; }
+    .insight p { margin: 0; opacity: .92; }
+
+    /* Solution */
+    .pillars { display: grid; gap: 14px; }
+    .pillar { background: var(--pink-50); border-radius: var(--radius); padding: 22px; }
+    .pillar .num { font-family: "Playfair Display", Georgia, serif; font-style: italic; font-size: 1.6rem; color: var(--rose-500); line-height: 1; margin-bottom: 8px; }
+    .pillar p { margin: 0; color: var(--muted); font-size: .95rem; }
+    .quote {
+      margin-top: 28px; display: flex; gap: 16px; align-items: center;
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px;
+      box-shadow: var(--shadow);
+    }
+    .quote .media { width: 72px; height: 72px; flex: none; border-radius: 50%; }
+    .quote .media::before { font-size: .6rem; padding: 4px; }
+    .quote blockquote { margin: 0; font-size: 1rem; }
+    .quote cite { display: block; margin-top: 6px; font-style: normal; font-weight: 700; font-size: .88rem; color: var(--rose-700); }
+
+    /* Ingredients */
+    .ingr-layout { display: grid; gap: 24px; align-items: start; }
+    .ingr-media { aspect-ratio: 1 / 1; }
+    .ingr-group { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; margin-bottom: 14px; }
+    .ingr-group-title { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .ingr-group-title .tag { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #fff; background: var(--rose-500); padding: 4px 10px; border-radius: 999px; }
+    .ingr { padding: 12px 0; border-top: 1px dashed var(--line); }
+    .ingr:first-of-type { border-top: 0; padding-top: 0; }
+    .ingr h3 { margin: 0 0 2px; color: var(--ink); }
+    .ingr p { margin: 0; color: var(--muted); font-size: .92rem; }
+    .howto { background: var(--pink-100); border-radius: var(--radius); padding: 20px; }
+    .howto h3 { color: var(--rose-700); }
+    .howto ul { margin: 0; padding-left: 20px; }
+    .howto li { margin-bottom: 4px; }
+
+    /* Testimonials */
+    .testi-grid { display: grid; gap: 14px; }
+    .testi {
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .stars { color: #f2a33a; letter-spacing: 2px; }
+    .testi blockquote { margin: 0; }
+    .testi .who { display: flex; align-items: center; gap: 10px; margin-top: auto; }
+    .testi .who .media { width: 40px; height: 40px; border-radius: 50%; border-width: 1px; }
+    .testi .who .media::before { content: ""; }
+    .testi .who strong { display: block; font-size: .9rem; }
+    .testi .who span { font-size: .8rem; color: var(--muted); }
+    .chip { align-self: flex-start; font-size: .75rem; font-weight: 700; color: var(--rose-700); background: var(--pink-100); padding: 4px 10px; border-radius: 999px; }
+    .proof-row { display: grid; gap: 14px; margin-top: 14px; grid-template-columns: repeat(3, 1fr); }
+    .proof-row .media { aspect-ratio: 9 / 16; }
+    .proof-row .media::before { font-size: .72rem; }
+    .video { aspect-ratio: 16 / 9; margin-top: 14px; }
+
+    /* Certificates */
+    .cert-grid { display: grid; gap: 14px; }
+    .cert { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; text-align: center; }
+    .cert .media { aspect-ratio: 3 / 4; margin-bottom: 14px; }
+    .cert h3 { color: var(--rose-700); margin-bottom: 4px; }
+    .cert p { margin: 0; font-size: .9rem; color: var(--muted); }
+    .warn { margin-top: 28px; background: var(--warn-bg); border: 1px solid #f5d9a8; border-radius: var(--radius); padding: 22px; }
+    .warn h3 { color: var(--warn-ink); display: flex; align-items: center; gap: 8px; font-size: 1.15rem; }
+    .warn ul { margin: 0; padding-left: 20px; }
+    .warn li { margin-bottom: 8px; }
+    .verified { margin-top: 14px; display: grid; gap: 16px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; }
+    .verified .media { aspect-ratio: 9 / 16; max-width: 200px; margin: 0 auto; width: 100%; }
+    .badge-verified { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--wa-dark); background: #e7f6ee; padding: 6px 12px; border-radius: 999px; font-size: .85rem; margin-bottom: 10px; }
+
+    /* Offer */
+    .offer-card {
+      max-width: 640px; margin: 0 auto; background: var(--surface); border-radius: 28px; padding: 28px 22px;
+      border: 2px solid var(--pink-200); box-shadow: var(--shadow);
+    }
+    .benefits { list-style: none; padding: 0; margin: 0 0 20px; }
+    .benefits li { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-bottom: 1px dashed var(--line); }
+    .benefits li:last-child { border-bottom: 0; }
+    .benefits svg { flex: none; width: 22px; height: 22px; color: var(--wa); margin-top: 2px; }
+    .price-box { border: 2px dashed var(--pink-200); border-radius: 16px; padding: 18px; text-align: center; background: var(--pink-50); }
+    .price-box .label { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--rose-600); }
+    .price-box .price { font-size: 1.6rem; font-weight: 800; margin: 4px 0; }
+    .offer-card .cta-block { margin-top: 22px; }
+    .offer-card .btn-wa { width: 100%; }
+
+    /* FAQ */
+    .faq { max-width: 720px; margin: 0 auto; }
+    .faq details { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; margin-bottom: 10px; }
+    .faq summary { cursor: pointer; list-style: none; padding: 18px 20px; font-weight: 700; display: flex; justify-content: space-between; gap: 12px; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; color: var(--rose-600); font-size: 1.3rem; line-height: 1; }
+    .faq details[open] summary::after { content: "–"; }
+    .faq details p { padding: 0 20px 18px; margin: 0; color: var(--muted); }
+
+    /* Final CTA */
+    .final { background: linear-gradient(160deg, var(--rose-700), var(--rose-500)); color: #fff; text-align: center; }
+    .final h2 { color: #fff; }
+    .final p { opacity: .92; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .final .cta-note { color: #fff; opacity: .85; }
+
+    footer { padding: 32px 0 120px; font-size: .8rem; color: var(--muted); text-align: center; }
+    footer p { max-width: 640px; margin: 0 auto 10px; }
+
+    /* Sticky CTA (mobile) */
+    .sticky-cta {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+      padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+      background: rgba(255, 255, 255, .96); border-top: 1px solid var(--line);
+      box-shadow: 0 -8px 24px -12px rgba(0, 0, 0, .2);
+      transform: translateY(110%); transition: transform .3s ease;
+    }
+    .sticky-cta.show { transform: translateY(0); }
+    .sticky-cta .btn-wa { width: 100%; min-height: 50px; padding: 10px 20px; }
+
+    @media (min-width: 720px) {
+      section { padding: 80px 0; }
+      .hero { padding: 56px 0 72px; }
+      .hero-grid { grid-template-columns: 1.1fr .9fr; gap: 48px; }
+      .pain-grid { grid-template-columns: repeat(2, 1fr); }
+      .pillars { grid-template-columns: repeat(3, 1fr); }
+      .ingr-layout { grid-template-columns: .8fr 1.2fr; }
+      .ingr-media { position: sticky; top: 24px; }
+      .testi-grid { grid-template-columns: repeat(3, 1fr); }
+      .cert-grid { grid-template-columns: repeat(2, 1fr); }
+      .verified { grid-template-columns: 200px 1fr; }
+      .offer-card { padding: 36px; }
+      .sticky-cta { display: none; }
+      footer { padding-bottom: 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ikon dipakai ulang -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-chat" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.6-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-qr" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M14 14h2v2h-2zM18 18h2v2h-2zM14 18h2M18 14h2"/></symbol>
+  </svg>
+
+  <header class="topbar">
+    <div class="container">
+      <!-- TODO: ganti dengan logo DVN & Glow Lab (SVG/PNG transparan) -->
+      <span class="brand">DVN</span>
+      <span class="brand-sep">|</span>
+      <span class="brand-sub">Glow Lab</span>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="hero-eyebrow"><span class="dot"></span>Bersama Ce Silvi · Distributor resmi DVN</span>
+          <h1>Skincare sudah rutin, tapi kulit masih terasa <em>kusam &amp; kering?</em></h1>
+          <p class="hero-lead">Kulit juga butuh dukungan dari dalam. DVN Chewable Tablet dirancang untuk membantu menjaga kesehatan kulit dari dalam. Cukup 2 tablet sehari.</p>
+          <ul class="trust">
+            <li><svg><use href="#i-shield"/></svg>Terdaftar BPOM</li>
+            <li><svg><use href="#i-shield"/></svg>Bersertifikat Halal</li>
+            <li><svg><use href="#i-qr"/></svg>Produk asli, cek via QR</li>
+          </ul>
+          <div class="cta-block">
+            <a class="btn-wa" data-wa="hero" href="#order"><svg><use href="#i-chat"/></svg>Konsultasi Gratis via WhatsApp</a>
+            <p class="cta-note">Tanya dulu, tidak wajib beli.</p>
+          </div>
+        </div>
+        <div class="media hero-media" data-label="Foto Ce Silvi memegang DVN (assets/hero-silvi.webp, rasio 4:5)">
+          <img src="assets/hero-silvi.webp" alt="Ce Silvi memegang DVN Chewable Tablet" fetchpriority="high">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 1. PROBLEM ============ -->
+    <!-- TODO: validasi 4 keluhan ini dengan riwayat chat WA pelanggan. Pakai kata-kata pelanggan sendiri. -->
+    <section id="masalah">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Kamu merasakan ini?</span>
+          <h2>Sudah coba banyak cara, tapi kulit belum juga terasa sehat</h2>
+        </div>
+        <div class="pain-grid">
+          <div class="pain">
+            <span class="icon">1</span>
+            <div><h3>Ganti-ganti skincare</h3><p>Sudah coba berbagai serum dan krim, tapi hasilnya belum terasa seperti yang diharapkan.</p></div>
+          </div>
+          <div class="pain">
+            <span class="icon">2</span>
+            <div><h3>Kulit cepat terasa kering</h3><p>Kulit terasa kering dan kurang kenyal, apalagi setelah seharian di ruangan ber-AC.</p></div>
+          </div>
+          <div class="pain">
+            <span class="icon">3</span>
+            <div><h3>Wajah tampak lelah</h3><p>Kurang tidur dan aktivitas padat membuat wajah tampak kusam.</p></div>
+          </div>
+          <div class="pain">
+            <span class="icon">4</span>
+            <div><h3>Mulai khawatir soal usia</h3><p>Mulai memperhatikan garis halus dan ingin merawat kulit lebih awal.</p></div>
+          </div>
+        </div>
+        <div class="insight">
+          <h3>Ternyata, merawat dari luar saja belum cukup.</h3>
+          <p>Skincare bekerja di permukaan. Padahal kondisi kulit juga dipengaruhi apa yang terjadi di dalam tubuh: nutrisi, istirahat, stres, dan paparan sinar matahari.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 2. SOLUSI ============ -->
+    <section class="alt" id="solusi">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Solusinya</span>
+          <h2>Rawat dari luar, <span class="accent">lengkapi dari dalam</span></h2>
+          <p>DVN adalah suplemen chewable tablet yang dirancang khusus untuk membantu menjaga kesehatan kulit dari dalam. Rutinitas skincare-mu tetap jalan, dan kulit juga mendapat dukungan nutrisi dari dalam.</p>
+        </div>
+        <div class="pillars">
+          <div class="pillar">
+            <div class="num">01</div>
+            <h3>Nutrisi dari dalam</h3>
+            <p>Kolagen, hyaluronate, dan antioksidan dalam satu tablet.</p>
+          </div>
+          <div class="pillar">
+            <div class="num">02</div>
+            <h3>Praktis, cukup dikunyah</h3>
+            <p>2 tablet sehari, bisa sebelum atau sesudah makan.</p>
+          </div>
+          <div class="pillar">
+            <div class="num">03</div>
+            <h3>Jelas legalitasnya</h3>
+            <p>Terdaftar di BPOM, bersertifikat Halal, dan tidak mengandung zat pemutih.</p>
+          </div>
+        </div>
+        <!-- TODO: minta Ce Silvi menyetujui/menulis ulang kutipan ini dengan kata-katanya sendiri -->
+        <figure class="quote">
+          <div class="media" data-label="Foto Silvi">
+            <img src="assets/silvi-avatar.webp" alt="Ce Silvi">
+          </div>
+          <div>
+            <blockquote>“Saya minum DVN setiap hari sebagai bagian dari gaya hidup sehat. Skincare tetap jalan, tapi sekarang saya juga merawat kulit dari dalam.”</blockquote>
+            <cite>Ce Silvi, distributor resmi DVN</cite>
+          </div>
+        </figure>
+        <div class="cta-block">
+          <a class="btn-wa" data-wa="solusi" href="#order"><svg><use href="#i-chat"/></svg>Konsultasi Gratis via WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3. KOMPOSISI ============ -->
+    <!-- TODO (wajib sebelum live): cocokkan semua teks di section ini dengan klaim yang disetujui di registrasi BPOM.
+         Deskripsi bahan di bawah bersifat umum (fungsi bahan), bukan klaim khasiat produk. -->
+    <section id="komposisi">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Komposisi</span>
+          <h2>6 bahan pilihan dalam setiap tablet</h2>
+          <p>Bahan-bahan DVN dikelompokkan untuk mendukung dua kebutuhan kulit: kelembapan dan perlindungan.</p>
+        </div>
+        <div class="ingr-layout">
+          <div class="media ingr-media" data-label="Foto produk DVN tanpa teks (assets/produk-dvn.webp, rasio 1:1)">
+            <img src="assets/produk-dvn.webp" alt="Kemasan DVN Chewable Tablet" loading="lazy">
+          </div>
+          <div>
+            <div class="ingr-group">
+              <div class="ingr-group-title"><span class="tag">Kelembapan &amp; kekenyalan</span></div>
+              <div class="ingr">
+                <h3>Collagen Peptide &amp; Tripeptide</h3>
+                <p>Kolagen adalah protein struktural utama penyusun kulit. Jumlahnya di tubuh berkurang seiring bertambahnya usia.</p>
+              </div>
+              <div class="ingr">
+                <h3>Sodium Hyaluronate</h3>
+                <p>Bentuk garam dari asam hialuronat, zat yang dikenal karena kemampuannya mengikat air.</p>
+              </div>
+            </div>
+            <div class="ingr-group">
+              <div class="ingr-group-title"><span class="tag">Perlindungan antioksidan</span></div>
+              <div class="ingr">
+                <h3>L-Glutathione</h3>
+                <p>Antioksidan yang secara alami juga diproduksi oleh tubuh.</p>
+              </div>
+              <div class="ingr">
+                <h3>Vitamin C</h3>
+                <p>Antioksidan yang juga berperan dalam proses pembentukan kolagen.</p>
+              </div>
+              <div class="ingr">
+                <h3>Pomegranate Extract</h3>
+                <p>Ekstrak buah delima, sumber polifenol.</p>
+              </div>
+              <div class="ingr">
+                <h3>Japanese Knotweed Extract</h3>
+                <p>Sumber alami resveratrol, senyawa antioksidan dari tumbuhan.</p>
+              </div>
+            </div>
+            <div class="howto">
+              <h3>Cara konsumsi</h3>
+              <ul>
+                <li>Konsumsi 2 tablet per hari, dikunyah.</li>
+                <li>Bisa diminum sebelum atau sesudah makan.</li>
+                <li>Tidak untuk menggantikan makanan utama.</li>
+              </ul>
+            </div>
+            <p class="small" style="margin-top:12px">Deskripsi bahan bersifat umum dan bukan klaim khasiat produk. Hasil dapat bervariasi tergantung kondisi tubuh masing-masing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4. HASIL / TESTIMONI ============ -->
+    <!-- TODO (wajib sebelum live): ganti SEMUA placeholder dengan testimoni ASLI + izin tertulis pelanggan.
+         Hindari foto before–after dramatis (aturan BPOM & Meta Ads). Fokus pada pengalaman & lama pemakaian. -->
+    <section class="alt" id="testimoni">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Hasil &amp; testimoni</span>
+          <h2>Cerita mereka yang sudah rutin minum DVN</h2>
+        </div>
+        <div class="testi-grid">
+          <article class="testi">
+            <span class="chip"><span class="ph-text">[X] minggu pemakaian</span></span>
+            <div class="stars" aria-label="5 dari 5">★★★★★</div>
+            <blockquote><span class="ph-text">[Kutipan asli pelanggan: kondisi sebelum, berapa lama minum DVN, apa yang dirasakan.]</span></blockquote>
+            <div class="who">
+              <div class="media"><img src="assets/testi-1.webp" alt="" loading="lazy"></div>
+              <div><strong class="ph-text">[Nama / inisial]</strong><span class="ph-text">[Usia], [Kota]</span></div>
+            </div>
+          </article>
+          <article class="testi">
+            <span class="chip"><span class="ph-text">[X] minggu pemakaian</span></span>
+            <div class="stars" aria-label="5 dari 5">★★★★★</div>
+            <blockquote><span class="ph-text">[Kutipan asli pelanggan: kondisi sebelum, berapa lama minum DVN, apa yang dirasakan.]</span></blockquote>
+            <div class="who">
+              <div class="media"><img src="assets/testi-2.webp" alt="" loading="lazy"></div>
+              <div><strong class="ph-text">[Nama / inisial]</strong><span class="ph-text">[Usia], [Kota]</span></div>
+            </div>
+          </article>
+          <article class="testi">
+            <span class="chip"><span class="ph-text">[X] minggu pemakaian</span></span>
+            <div class="stars" aria-label="5 dari 5">★★★★★</div>
+            <blockquote><span class="ph-text">[Kutipan asli pelanggan: kondisi sebelum, berapa lama minum DVN, apa yang dirasakan.]</span></blockquote>
+            <div class="who">
+              <div class="media"><img src="assets/testi-3.webp" alt="" loading="lazy"></div>
+              <div><strong class="ph-text">[Nama / inisial]</strong><span class="ph-text">[Usia], [Kota]</span></div>
+            </div>
+          </article>
+        </div>
+        <div class="proof-row">
+          <div class="media" data-label="Screenshot chat WA 1 (blur nama & nomor)"><img src="assets/chat-1.webp" alt="Screenshot testimoni pelanggan" loading="lazy"></div>
+          <div class="media" data-label="Screenshot chat WA 2 (blur nama & nomor)"><img src="assets/chat-2.webp" alt="Screenshot testimoni pelanggan" loading="lazy"></div>
+          <div class="media" data-label="Screenshot chat WA 3 (blur nama & nomor)"><img src="assets/chat-3.webp" alt="Screenshot testimoni pelanggan" loading="lazy"></div>
+        </div>
+        <!-- Opsional: ganti dengan <video> atau embed video testimoni -->
+        <div class="media video" data-label="Opsional: video testimoni pelanggan (16:9)"></div>
+        <p class="small" style="text-align:center;margin-top:16px">Testimoni merupakan pengalaman pribadi pelanggan. Hasil dapat bervariasi tergantung kondisi tubuh masing-masing.</p>
+        <div class="cta-block">
+          <a class="btn-wa" data-wa="testimoni" href="#order"><svg><use href="#i-chat"/></svg>Konsultasi Gratis via WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5. SERTIFIKAT & KEASLIAN ============ -->
+    <section id="sertifikat">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Legalitas &amp; keaslian</span>
+          <h2>Asli, terdaftar, dan terverifikasi</h2>
+        </div>
+        <div class="cert-grid">
+          <div class="cert">
+            <div class="media" data-label="Sertifikat BPOM (assets/sertifikat-bpom.webp)"><img src="assets/sertifikat-bpom.webp" alt="Sertifikat BPOM DVN" loading="lazy"></div>
+            <h3>Terdaftar di BPOM</h3>
+            <p>No. <span class="ph-text">[nomor registrasi BPOM]</span></p>
+          </div>
+          <div class="cert">
+            <div class="media" data-label="Sertifikat Halal (assets/sertifikat-halal.webp)"><img src="assets/sertifikat-halal.webp" alt="Sertifikat Halal DVN" loading="lazy"></div>
+            <h3>Bersertifikat Halal</h3>
+            <p>No. <span class="ph-text">[nomor sertifikat Halal]</span></p>
+          </div>
+        </div>
+
+        <div class="warn">
+          <h3>⚠️ Hati-hati produk palsu</h3>
+          <ul>
+            <li>DVN resmi <strong>tidak dijual di marketplace</strong> (Shopee, Tokopedia, Lazada, Bukalapak).</li>
+            <li>Harga dan promo ditentukan oleh pusat. Harga yang jauh lebih murah patut diwaspadai.</li>
+            <!-- TODO: pastikan URL website resmi pengecekan QR -->
+            <li>Setiap kemasan asli memiliki <strong>QR code</strong> yang bisa dipindai dan dicek langsung di website resmi <span class="ph-text">[www.wellousindonesia.com: konfirmasi URL]</span>.</li>
+          </ul>
+        </div>
+
+        <div class="verified">
+          <div class="media" data-label="Screenshot verifikasi distributor (assets/verifikasi-distributor.webp)"><img src="assets/verifikasi-distributor.webp" alt="Bukti verifikasi Ce Silvi sebagai distributor resmi DVN" loading="lazy"></div>
+          <div>
+            <span class="badge-verified"><svg width="16" height="16"><use href="#i-check"/></svg>Distributor terverifikasi</span>
+            <h3>Ce Silvi adalah distributor resmi DVN</h3>
+            <p class="small">ID distributor: <span class="ph-text">[ID distributor]</span>. Status ini bisa dicek di website resmi, jadi kamu tahu produk yang kamu terima asli.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 6. PENAWARAN ============ -->
+    <!-- TODO: isi blok harga HANYA jika kebijakan distributor mengizinkan menampilkan harga/promo.
+         Jika tidak diizinkan, hapus .price-box. Daftar benefit tetap dipakai sebagai penawaran. -->
+    <section class="alt" id="penawaran">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Penawaran</span>
+          <h2>Order lewat Ce Silvi, dapat <span class="accent">lebih dari sekadar produk</span></h2>
+        </div>
+        <div class="offer-card">
+          <ul class="benefits">
+            <li><svg><use href="#i-check"/></svg><span><strong>Produk asli terjamin</strong>, bisa dicek keasliannya via QR code.</span></li>
+            <li><svg><use href="#i-check"/></svg><span><strong>Konsultasi gratis</strong> sebelum dan selama pemakaian.</span></li>
+            <li><svg><use href="#i-check"/></svg><span><strong>Tips perawatan kulit</strong> langsung dari Ce Silvi.</span></li>
+            <li><svg><use href="#i-check"/></svg><span class="ph-text">[Bayar di tempat (COD): konfirmasi ketersediaan]</span></li>
+            <li><svg><use href="#i-check"/></svg><span class="ph-text">[Bonus/promo: hanya jika diizinkan pusat]</span></li>
+          </ul>
+          <div class="price-box">
+            <div class="label">Harga</div>
+            <div class="price ph-text">[Rp ...]</div>
+            <div class="small ph-text">[Paket / isi per botol / promo yang berlaku]</div>
+          </div>
+          <div class="cta-block">
+            <a class="btn-wa" data-wa="penawaran" href="#order"><svg><use href="#i-chat"/></svg>Cek Harga &amp; Order via WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ: menjawab keberatan sebelum CTA akhir -->
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">FAQ</span>
+          <h2>Pertanyaan yang sering ditanyakan</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Bagaimana cara konsumsi DVN?</summary>
+            <p>Konsumsi 2 tablet per hari dengan cara dikunyah. Bisa sebelum atau sesudah makan. DVN tidak untuk menggantikan makanan utama.</p>
+          </details>
+          <details>
+            <summary>Kapan hasilnya mulai terasa?</summary>
+            <p>Setiap orang berbeda. DVN bukan produk instan, jadi hasil bergantung pada konsistensi pemakaian dan kondisi tubuh masing-masing. Ce Silvi bisa bantu memantau perkembanganmu.</p>
+          </details>
+          <details>
+            <summary>Apakah DVN mengandung pemutih?</summary>
+            <p>Tidak. DVN tidak mengandung zat pemutih.</p>
+          </details>
+          <details>
+            <summary>Apakah aman dikonsumsi?</summary>
+            <p>DVN terdaftar di BPOM dan bersertifikat Halal. Jika kamu sedang hamil, menyusui, atau memiliki kondisi medis tertentu, konsultasikan dulu dengan dokter sebelum mengonsumsi suplemen.</p>
+          </details>
+          <details>
+            <summary>Kenapa tidak beli di marketplace saja?</summary>
+            <p>DVN resmi tidak dijual di marketplace. Untuk memastikan keaslian produk, order langsung lewat distributor terverifikasi seperti Ce Silvi.</p>
+          </details>
+          <details>
+            <summary>Bagaimana cara order?</summary>
+            <p>Klik tombol WhatsApp, ceritakan kondisi kulitmu, dan Ce Silvi akan bantu rekomendasi serta proses ordernya.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 7. CTA ============ -->
+    <section class="final" id="order">
+      <div class="container">
+        <h2>Mulai rawat kulitmu dari dalam, hari ini</h2>
+        <p>Ceritakan kondisi kulitmu ke Ce Silvi. Konsultasi gratis, tanpa kewajiban membeli.</p>
+        <div class="cta-block">
+          <a class="btn-wa" data-wa="final" href="#order"><svg><use href="#i-chat"/></svg>Konsultasi Gratis via WhatsApp</a>
+          <p class="cta-note">Produk asli · Terdaftar BPOM · Bersertifikat Halal</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Suplemen ini tidak mengandung zat pemutih dan tidak memberikan hasil instan. Hasil dapat bervariasi tergantung kondisi tubuh masing-masing. Tidak untuk menggantikan makanan utama.</p>
+      <p>Halaman ini dikelola oleh Ce Silvi (Glow Lab), distributor resmi DVN.</p>
+    </div>
+  </footer>
+
+  <div class="sticky-cta" id="sticky-cta">
+    <a class="btn-wa" data-wa="sticky" href="#order"><svg><use href="#i-chat"/></svg>Konsultasi Gratis via WhatsApp</a>
+  </div>
+
+  <script>
+    // ===== KONFIGURASI =====
+    // TODO: ganti dengan nomor WhatsApp Ce Silvi (format internasional, tanpa + / spasi), contoh: 6281234567890
+    var WA_NUMBER = '62XXXXXXXXXX';
+
+    // Pesan otomatis per posisi tombol, supaya terlihat tombol mana yang menghasilkan chat.
+    var WA_MESSAGES = {
+      hero: 'Halo Ce Silvi, saya mau konsultasi gratis soal kulit saya.',
+      solusi: 'Halo Ce Silvi, saya mau tahu lebih lanjut tentang DVN.',
+      testimoni: 'Halo Ce Silvi, saya sudah lihat testimoni DVN dan mau konsultasi.',
+      penawaran: 'Halo Ce Silvi, saya mau tanya harga dan cara order DVN.',
+      final: 'Halo Ce Silvi, saya mau konsultasi dan order DVN.',
+      sticky: 'Halo Ce Silvi, saya mau konsultasi soal DVN.'
+    };
+
+    document.querySelectorAll('[data-wa]').forEach(function (el) {
+      var pos = el.getAttribute('data-wa');
+      var text = WA_MESSAGES[pos] || WA_MESSAGES.final;
+      el.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text);
+      el.target = '_blank';
+      el.rel = 'noopener';
+      el.addEventListener('click', function () {
+        if (typeof window.fbq === 'function') {
+          window.fbq('track', 'Contact', { content_name: 'wa_' + pos });
+        }
+      });
+    });
+
+    // Gambar yang belum diunggah ke assets/ dihapus, sehingga kotak placeholder berlabel tetap terlihat.
+    document.querySelectorAll('.media img').forEach(function (img) {
+      var box = img.parentElement;
+      function ok() { box.classList.add('has-img'); }
+      function fail() { img.remove(); }
+      if (img.complete) { img.naturalWidth > 0 ? ok() : fail(); }
+      img.addEventListener('load', ok);
+      img.addEventListener('error', fail);
+    });
+
+    // Sticky CTA mobile: muncul setelah tombol hero lewat, sembunyi saat section CTA akhir terlihat.
+    (function () {
+      var sticky = document.getElementById('sticky-cta');
+      var heroBtn = document.querySelector('[data-wa="hero"]');
+      var finalSec = document.getElementById('order');
+      if (!('IntersectionObserver' in window) || !sticky) return;
+      var heroGone = false, finalVisible = false;
+      function update() { sticky.classList.toggle('show', heroGone && !finalVisible); }
+      new IntersectionObserver(function (e) {
+        heroGone = !e[0].isIntersecting && e[0].boundingClientRect.top < 0; update();
+      }).observe(heroBtn);
+      new IntersectionObserver(function (e) {
+        finalVisible = e[0].isIntersecting; update();
+      }).observe(finalSec);
+    })();
+  </script>
+</body>
+</html>

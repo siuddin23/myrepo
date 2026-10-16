@@ -1,52 +1,46 @@
-# Landing Page DVN × Glow Lab (draft)
+# Landing Page DVN × Glow Lab
 
-Draft LP baru untuk menggantikan https://web.glowlab.id/DVNGlowlab.
-Satu file statis (`index.html`): tidak perlu build, bisa di-hosting di mana saja.
+LP baru untuk menggantikan https://web.glowlab.id/DVNGlowlab.
+Satu file statis (`index.html`) + gambar di `assets/`: tidak perlu build, tanpa library JS, bisa di-hosting di mana saja.
+Desain mobile-first (diuji di lebar 390 px dan 1280 px).
 
 ## Struktur halaman
 
-| # | Section | Anchor |
-|---|---|---|
-| 0 | Hero: headline masalah, badge, CTA | `#hero` |
-| 1 | Problem | `#masalah` |
-| 2 | Solusi (+ kutipan Ce Silvi) | `#solusi` |
-| 3 | Komposisi (bahan → fungsi) + cara konsumsi | `#komposisi` |
-| 4 | Hasil / testimoni | `#testimoni` |
-| 5 | Sertifikat + keaslian + verifikasi distributor | `#sertifikat` |
-| 6 | Penawaran + FAQ | `#penawaran`, `#faq` |
-| 7 | CTA akhir | `#order` |
+| # | Section | Anchor | Interaksi |
+|---|---|---|---|
+| 0 | Header + hook masalah, foto Ce Silvi, CTA | `#hero` | |
+| 1 | Problem: checklist keluhan | `#masalah` | Kartu bisa diketuk, meter & pesan berubah |
+| 2 | Solusi: Skincare + DVN, 2 tablet/hari, keunggulan | `#solusi` | |
+| 3 | Komposisi: 7 bahan mengorbit botol | `#komposisi` | Auto-tour saat terlihat, ketuk bahan, filter Kelembapan/Antioksidan |
+| 4 | Testimoni: screenshot paket diterima | `#testimoni` | Carousel geser + dot |
+| 5 | Sertifikat: Halal, BPOM, cek keaslian, dealer terverifikasi | `#sertifikat` | |
+| 6 | CTA akhir | `#order` | |
 
-Preview: buka `index.html` di browser. Teks berlatar kuning = placeholder, kotak bergaris = gambar yang belum diunggah.
+Sticky CTA WhatsApp muncul di HP setelah tombol hero terlewati. Semua animasi mati otomatis jika perangkat memakai pengaturan *reduce motion*.
+
+Data 7 bahan (nama, deskripsi, warna, gambar) ada di array `INGREDIENTS` di `<script>` paling bawah.
 
 ## Checklist sebelum live
 
 **Konfigurasi**
 - [ ] `WA_NUMBER` di bagian `<script>` paling bawah: nomor WA Ce Silvi (format `628...`)
-- [ ] Meta Pixel di `<head>`: ganti `PIXEL_ID` lalu aktifkan. Setiap klik tombol WA mengirim event `Contact` dengan `content_name` = posisi tombol (`wa_hero`, `wa_testimoni`, dst.)
+- [ ] Meta Pixel di `<head>`: ganti `PIXEL_ID` lalu aktifkan. Setiap klik tombol WA mengirim event `Contact` dengan `content_name` = posisi tombol (`wa_hero`, `wa_solusi`, `wa_testimoni`, `wa_final`, `wa_sticky`)
+- [ ] `og:image` memakai path relatif; ganti ke URL absolut setelah domain final diketahui
 
 **Konten & kepatuhan**
-- [ ] Konfirmasi kebijakan distributor dari pusat: boleh tampilkan harga/promo/bonus? boleh pakai testimoni?
-- [ ] Section Penawaran: isi atau hapus `.price-box`, COD, dan bonus sesuai kebijakan
-- [ ] Section Komposisi: cocokkan semua teks dengan klaim yang disetujui di registrasi BPOM
-- [ ] Section Problem: validasi 4 keluhan dengan riwayat chat pelanggan
-- [ ] Testimoni: ganti semua placeholder dengan testimoni asli + izin tertulis (hindari before–after dramatis)
-- [ ] Nomor registrasi BPOM, nomor sertifikat Halal, ID distributor
-- [ ] URL website resmi untuk cek QR
-- [ ] Kutipan Ce Silvi di section Solusi disetujui oleh Ce Silvi
+- [ ] Nomor registrasi BPOM & nomor sertifikat Halal (masih `[nomor]`)
+- [ ] Cocokkan deskripsi bahan di `INGREDIENTS` dengan klaim yang disetujui BPOM
+- [ ] Izin pelanggan untuk screenshot testimoni (foto profil sudah diblur); isi atau hapus kartu slot ketiga
+- [ ] Konfirmasi Free ongkir & COD masih berlaku
+- [ ] Hindari kata: kusam, kasar, glowing, cerah. Pakai: sehat, lembap, kenyal
 
-**Gambar** (taruh di `assets/`, nama file harus sama; otomatis tampil menggantikan placeholder)
+**Gambar** (`assets/`, semua WebP, total ±330 KB; selain foto hero semuanya lazy-load)
 
-| File | Isi | Rasio |
+| File | Isi | Catatan |
 |---|---|---|
-| `hero-silvi.webp` | Ce Silvi memegang produk | 4:5 |
-| `silvi-avatar.webp` | Foto wajah Ce Silvi | 1:1 |
-| `produk-dvn.webp` | Foto produk tanpa teks | 1:1 |
-| `testi-1.webp` … `testi-3.webp` | Foto profil pemberi testimoni (opsional) | 1:1 |
-| `chat-1.webp` … `chat-3.webp` | Screenshot chat testimoni (blur nama & nomor) | 9:16 |
-| `sertifikat-bpom.webp` | Sertifikat BPOM | 3:4 |
-| `sertifikat-halal.webp` | Sertifikat Halal | 3:4 |
-| `verifikasi-distributor.webp` | Screenshot verifikasi distributor | 9:16 |
-
-Logo DVN & Glow Lab: ganti teks di `<header class="topbar">` dengan file logo.
-
-Kompres gambar ke WebP (target < 200 KB per gambar) supaya halaman cepat dibuka di HP.
+| `hero-silvi.webp` | Ce Silvi memegang produk, background sudah dihapus | |
+| `bottle.webp`, `tablets.webp` | Foto produk transparan | |
+| `ing-*.webp` | Ikon 7 bahan (dari infografis 7 Kandungan) | `ing-vc.webp` dibuat ulang, belum ada ikon resmi Vitamin C |
+| `testi-1.webp`, `testi-2.webp` | Screenshot chat paket diterima | Foto profil diblur |
+| `cert-halal-*.webp`, `cert-bpom-*.webp`, `badges.webp`, `verified.webp` | Sertifikat, strip logo, kartu VERIFIED | **Ganti dengan file asli resolusi tinggi** (sekarang crop dari screenshot LP lama) |
+| `og-dvn.jpg` | Gambar preview saat link dibagikan | |

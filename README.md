@@ -2,7 +2,7 @@
 
 LP baru untuk menggantikan https://web.glowlab.id/DVNGlowlab.
 Satu file statis (`index.html`) + gambar di `assets/`: tidak perlu build, tanpa library JS, bisa di-hosting di mana saja.
-Desain mobile-first (diuji di lebar 390 px dan 1280 px).
+Desain mobile-first dan adaptif: HP (<640 px), tablet (640–899 px), desktop (≥900 px, header lengket dengan navigasi + tombol WA). Diuji di 390, 768, 1280 dan 1440 px.
 
 ## Struktur halaman
 

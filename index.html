@@ -81,7 +81,10 @@
 
     /* Header & hero */
     .top, .hero { background: var(--pink); }
-    .top { height: 60px; display: flex; align-items: center; justify-content: center; gap: 10px; color: var(--rose-d); }
+    .top { height: 60px; color: var(--rose-d); }
+    .top-in { height: 100%; display: flex; align-items: center; justify-content: center; gap: 24px; max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; color: inherit; text-decoration: none; }
+    .topnav, .top-wa { display: none; }
     .logo { font-family: var(--serif); font-size: 24px; letter-spacing: .06em; }
     .gl { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 14px; color: var(--rose); }
     .gl svg { width: 16px; height: 16px; }
@@ -259,20 +262,83 @@
     @keyframes twinkle { 0%, 100% { transform: scale(1) rotate(0); opacity: 1; } 50% { transform: scale(.6) rotate(45deg); opacity: .5; } }
 
     /* Desktop */
-    @media (min-width: 900px) {
-      .sec { padding: 96px 0; }
-      .hero-grid { grid-template-columns: 1.05fr .95fr; column-gap: 48px; align-items: center; }
-      .hero-copy { padding-top: 48px; grid-column: 1; grid-row: 1; }
-      .hero-cta { grid-column: 1; grid-row: 2; align-self: start; margin-top: 8px; }
-      .hero-cta .trust { justify-content: flex-start; }
-      .hero-cta .btn-wa { align-self: flex-start; }
-      .hero-cta .note { text-align: left; }
-      .photo { grid-column: 2; grid-row: 1 / span 2; margin-top: 32px; }
-      .split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
-      .pgrid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-      .track { margin: 24px 0 0; padding: 4px 0 12px; }
+    /* Tablet */
+    @media (min-width: 640px) {
+      .wrap { padding: 0 40px; }
+      .track { margin: 24px -40px 0; padding: 4px 40px 12px; }
+      .h2 { max-width: 640px; }
+      .photo { width: 400px; height: 520px; }
+      .photo img { height: 520px; }
+      .photo::before { width: 340px; height: 340px; margin-left: -170px; }
       .docs { max-width: 340px; }
+      .sec .btn-wa { max-width: 420px; }
+      .hero-cta .btn-wa { width: 100%; max-width: 420px; align-self: center; }
+    }
+
+    /* Desktop */
+    @media (min-width: 900px) {
+      .wrap { max-width: 1160px; }
+      .sec { padding: 104px 0; }
+      section[id] { scroll-margin-top: 72px; }
+
+      /* Header lengket dengan navigasi + tombol WA (sticky CTA bawah tidak dipakai di desktop) */
+      .top { position: sticky; top: 0; z-index: 60; height: 68px; transition: box-shadow .3s; }
+      .top.scrolled { box-shadow: 0 8px 24px -16px rgba(126,22,54,.55); }
+      .top-in { justify-content: space-between; padding: 0 40px; }
+      .topnav { display: flex; gap: 28px; }
+      .topnav a { color: var(--rose-d); text-decoration: none; font-size: 14px; font-weight: 600; padding: 8px 0; border-bottom: 2px solid transparent; transition: border-color .2s; }
+      .topnav a:hover { border-bottom-color: var(--rose); }
+      .top-wa { display: inline-flex; min-height: 44px; padding: 0 18px; font-size: 14px; }
       .sticky { display: none; }
+
+      /* Hero: copy kiri, foto kanan */
+      .hero-grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); column-gap: 56px; align-items: center; }
+      .hero-copy { padding-top: 72px; grid-column: 1; grid-row: 1; align-self: end; }
+      .hero h1 { font-size: clamp(48px, 4.8vw, 64px); max-width: 620px; }
+      .lead { font-size: 18px; max-width: 520px; }
+      .hero-cta { grid-column: 1; grid-row: 2; align-self: start; margin-top: 12px; padding-bottom: 120px; }
+      .hero-cta .trust { justify-content: flex-start; }
+      .hero-cta .btn-wa { align-self: flex-start; padding: 0 32px; }
+      .hero-cta .note { text-align: left; }
+      .photo { grid-column: 2; grid-row: 1 / span 2; width: 460px; height: 600px; margin: 40px auto 0; }
+      .photo img { height: 600px; }
+      .photo::before { width: 420px; height: 420px; margin-left: -210px; top: 40px; }
+      .deco.c3 { top: 520px; }
+
+      .split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; align-items: start; }
+      .pgrid { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 32px; }
+      .pcard { min-height: 196px; padding: 20px 18px; }
+      .pcard:hover { border-color: #E9BFCB; }
+      .result { margin-top: 24px; }
+      .split > .rv .insight { margin-top: 24px; }
+
+      /* Komposisi: orbit lebih besar, kartu sejajar tengah */
+      .komp { align-items: center; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); }
+      .orbit { width: min(470px, 100%); margin-top: 20px; }
+      .clabel { font-size: 12px; }
+      .dcard { padding: 28px; min-height: 340px; }
+      .dicon { width: 92px; height: 92px; }
+      .dname { font-size: 32px; }
+
+      /* Testimoni: grid 3 kolom, tanpa carousel */
+      .track { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; overflow: visible; margin: 32px 0 0; padding: 0; }
+      .tcard { flex: none; }
+      .dots { display: none; }
+      #testimoni .btn-wa { margin-left: 0 !important; }
+
+      /* CTA: botol kiri, copy kanan */
+      .cta { text-align: left; padding-bottom: 104px; }
+      .cta .inner { max-width: 1000px; display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 56px; align-items: center; }
+      .glow { width: 300px; height: 440px; }
+      .glow::before { left: 40px; top: 100px; width: 220px; height: 220px; }
+      .glow img { height: 420px; }
+      .cta .trust { justify-content: flex-start; }
+      .cta .btn-wa { max-width: 420px; }
+      .cta .badges { margin-left: 0; }
+    }
+
+    @media (min-width: 1360px) {
+      .hero h1 { font-size: 68px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -284,10 +350,22 @@
 </head>
 <body>
 
-<header class="top">
-  <span class="logo">D·V·N</span>
-  <span aria-hidden="true" style="color: var(--rose); font-size: 14px">×</span>
-  <span class="gl"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3c3.8 4.6 6 8 6 11a6 6 0 0 1-12 0c0-3 2.2-6.4 6-11z"/></svg>Glow Lab</span>
+<header class="top" id="top">
+  <div class="top-in">
+    <a class="brand" href="#hero" aria-label="DVN × Glow Lab, ke atas">
+      <span class="logo">D·V·N</span>
+      <span aria-hidden="true" style="color: var(--rose); font-size: 14px">×</span>
+      <span class="gl"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3c3.8 4.6 6 8 6 11a6 6 0 0 1-12 0c0-3 2.2-6.4 6-11z"/></svg>Glow Lab</span>
+    </a>
+    <nav class="topnav" aria-label="Navigasi halaman">
+      <a href="#masalah">Problem</a>
+      <a href="#solusi">Solusi</a>
+      <a href="#komposisi">Komposisi</a>
+      <a href="#testimoni">Testimoni</a>
+      <a href="#sertifikat">Sertifikat</a>
+    </nav>
+    <a class="btn-wa top-wa" data-wa="header" href="#order"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20l1.2-4.3A8.5 8.5 0 1 1 20.5 11.5z"/></svg>Konsultasi Gratis</a>
+  </div>
 </header>
 
 <main>
@@ -444,7 +522,7 @@
       <h2 class="h2">7 kandungan aktif, <em>satu tablet kunyah</em></h2>
       <p class="sub">Ketuk tiap bahan untuk melihat perannya dalam menjaga kulit.</p>
     </div>
-    <div class="split" style="margin-top: 4px">
+    <div class="split komp" style="margin-top: 4px">
       <div>
         <div class="pills" role="group" aria-label="Filter kandungan">
           <button type="button" class="pill" data-filter="all" aria-pressed="true">Semua (7)</button>
@@ -573,6 +651,7 @@
 <section class="sec cta" id="order">
   <div class="wrap inner">
     <div class="glow"><img src="assets/bottle.webp" alt="Botol DVN Chewable Tablet" width="480" height="953" loading="lazy" decoding="async"></div>
+    <div class="cta-copy">
     <h2 class="h2">Mulai rawat kulitmu dari dalam, <em>hari ini</em></h2>
     <p style="font-size: 15px; color: #D9C9CE; margin-bottom: 24px">Bantu jaga kulit tetap sehat, lembap &amp; kenyal dari dalam. Ceritakan kondisi kulitmu ke Ce Silvi, konsultasi gratis tanpa kewajiban membeli.</p>
     <a class="btn-wa" data-wa="final" href="#order"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20l1.2-4.3A8.5 8.5 0 1 1 20.5 11.5z"/></svg>Konsultasi Gratis via WhatsApp</a>
@@ -582,6 +661,7 @@
     <img class="badges" src="assets/badges.webp" alt="Logo Halal, BPOM, ISO 9001 dan sertifikasi mutu lainnya" width="408" height="62" loading="lazy" decoding="async" style="margin-top: 20px">
     <p class="fine" style="margin-top: 32px">Suplemen ini tidak memberikan hasil instan. Hasil dapat bervariasi tergantung kondisi tubuh masing-masing. Tidak untuk menggantikan makanan utama.</p>
     <p class="fine" style="margin-top: 12px">Halaman ini dikelola oleh Ce Silvi (Glow Lab), distributor resmi DVN.</p>
+    </div>
   </div>
 </section>
 
@@ -606,7 +686,8 @@
     solusi: 'Halo Ce Silvi, saya mau tahu lebih lanjut tentang DVN.',
     testimoni: 'Halo Ce Silvi, saya mau order DVN, tolong dibantu kirim ya.',
     final: 'Halo Ce Silvi, saya mau konsultasi dan order DVN.',
-    sticky: 'Halo Ce Silvi, saya mau konsultasi soal DVN.'
+    sticky: 'Halo Ce Silvi, saya mau konsultasi soal DVN.',
+    header: 'Halo Ce Silvi, saya mau konsultasi gratis soal DVN.'
   };
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -776,6 +857,10 @@
     var i = Math.max(0, Math.min(dots.length - 1, Math.round(track.scrollLeft / w)));
     dots.forEach(function (d, j) { d.classList.toggle('on', j === i); });
   }, { passive: true });
+
+  // ===== Header desktop: bayangan saat halaman di-scroll =====
+  var topEl = document.getElementById('top');
+  window.addEventListener('scroll', function () { topEl.classList.toggle('scrolled', window.scrollY > 8); }, { passive: true });
 
   // ===== Animasi muncul saat scroll =====
   var rv = document.querySelectorAll('.rv');

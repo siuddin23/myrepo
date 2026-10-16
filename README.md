@@ -24,13 +24,13 @@ Data 7 bahan (nama, deskripsi, warna, gambar) ada di array `INGREDIENTS` di `<sc
 
 **Konfigurasi**
 - [ ] `WA_NUMBER` di bagian `<script>` paling bawah: nomor WA Ce Silvi (format `628...`)
-- [ ] Meta Pixel di `<head>`: ganti `PIXEL_ID` lalu aktifkan. Setiap klik tombol WA mengirim event `Contact` dengan `content_name` = posisi tombol (`wa_hero`, `wa_solusi`, `wa_testimoni`, `wa_final`, `wa_sticky`)
+- [ ] Meta Pixel di `<head>`: ganti `PIXEL_ID` lalu aktifkan. Setiap klik tombol WA mengirim event `Contact` dengan `content_name` = posisi tombol (`wa_header`, `wa_hero`, `wa_solusi`, `wa_testimoni`, `wa_final`, `wa_sticky`)
 - [ ] `og:image` memakai path relatif; ganti ke URL absolut setelah domain final diketahui
 
 **Konten & kepatuhan**
 - [ ] Nomor registrasi BPOM & nomor sertifikat Halal (masih `[nomor]`)
 - [ ] Cocokkan deskripsi bahan di `INGREDIENTS` dengan klaim yang disetujui BPOM
-- [ ] Izin pelanggan untuk screenshot testimoni (foto profil sudah diblur); isi atau hapus kartu slot ketiga
+- [ ] Izin pelanggan untuk 3 screenshot testimoni (foto profil sudah diblur)
 - [ ] Konfirmasi Free ongkir & COD masih berlaku
 - [ ] Hindari kata: kusam, kasar, glowing, cerah. Pakai: sehat, lembap, kenyal
 
@@ -41,6 +41,6 @@ Data 7 bahan (nama, deskripsi, warna, gambar) ada di array `INGREDIENTS` di `<sc
 | `hero-silvi.webp` | Ce Silvi memegang produk, background sudah dihapus | |
 | `bottle.webp`, `tablets.webp` | Foto produk transparan | |
 | `ing-*.webp` | Ikon 7 bahan (dari infografis 7 Kandungan) | `ing-vc.webp` dibuat ulang, belum ada ikon resmi Vitamin C |
-| `testi-1.webp`, `testi-2.webp` | Screenshot chat paket diterima | Foto profil diblur |
+| `testi-1.webp` … `testi-3.webp` | Screenshot chat paket diterima | Foto profil diblur |
 | `cert-halal-*.webp`, `cert-bpom-*.webp`, `badges.webp`, `verified.webp` | Sertifikat, strip logo, kartu VERIFIED | **Ganti dengan file asli resolusi tinggi** (sekarang crop dari screenshot LP lama) |
 | `og-dvn.jpg` | Gambar preview saat link dibagikan | |

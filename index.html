@@ -209,13 +209,18 @@
     .track { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 24px 12px; margin: 24px -24px 0; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
     .track::-webkit-scrollbar { display: none; }
     .tcard { flex: 0 0 300px; scroll-snap-align: center; background: #fff; border-radius: 20px; padding: 14px; border: 1px solid var(--line); display: flex; flex-direction: column; gap: 12px; }
-    .shot { width: 100%; height: auto; border-radius: 14px; border: 1px solid #E6E8EE; }
+    .shot { width: 100%; height: auto; aspect-ratio: 780 / 378; object-fit: contain; background: #F3F5F8; border-radius: 14px; border: 1px solid #E6E8EE; }
     .recv { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; color: var(--wa); background: #E5F5EC; padding: 5px 10px; border-radius: 999px; }
     .recv svg { width: 14px; height: 14px; }
     .quote { font-family: var(--serif); font-style: italic; font-size: 20px; line-height: 1.25; }
     .dots { display: flex; justify-content: center; gap: 6px; margin-top: 8px; }
     .d { width: 8px; height: 8px; border-radius: 999px; background: var(--blush-2); transition: all .3s; }
     .d.on { width: 22px; background: var(--rose); }
+
+    /* Baris penutup section: rata tengah di semua ukuran layar */
+    .sec-foot { margin: 28px auto 0; max-width: 560px; display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
+    .sec-foot .nowhite, .sec-foot .badges { margin: 0; }
+    .sec-foot .btn-wa { width: 100%; max-width: 420px; }
 
     /* Sertifikat */
     .certrow { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 14px; margin-top: 12px; }
@@ -323,8 +328,8 @@
       /* Testimoni: grid 3 kolom, tanpa carousel */
       .track { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; overflow: visible; margin: 32px 0 0; padding: 0; }
       .tcard { flex: none; }
+      .sec-foot { margin-top: 40px; }
       .dots { display: none; }
-      #testimoni .btn-wa { margin-left: 0 !important; }
 
       /* CTA: botol kiri, copy kanan */
       .cta { text-align: left; padding-bottom: 104px; }
@@ -506,9 +511,13 @@
           <span><strong>Gratis konsultasi &amp; tips dari Ce Silvi</strong><small>Ce Silvi juga minum DVN sebagai bagian dari gaya hidup sehat.</small></span>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="sec-foot rv">
       <p class="nowhite">Suplemen ini tidak mengandung zat pemutih atau hasil instan</p>
       <img class="badges" src="assets/badges.webp" alt="Logo Halal, BPOM, ISO 9001 dan sertifikasi mutu lainnya" width="408" height="62" loading="lazy" decoding="async">
-      <a class="btn-wa" data-wa="solusi" href="#order" style="margin-top: 20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20l1.2-4.3A8.5 8.5 0 1 1 20.5 11.5z"/></svg>Tanya Ce Silvi soal DVN</a>
+      <a class="btn-wa" data-wa="solusi" href="#order"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20l1.2-4.3A8.5 8.5 0 1 1 20.5 11.5z"/></svg>Tanya Ce Silvi soal DVN</a>
     </div>
   </div>
 </section>
@@ -591,15 +600,21 @@
         <p class="quote">“Paket saya kemarin hari Minggu sudah sampai ya, tks ya”</p>
         <p style="font-size: 13px; font-weight: 700">Evy <span style="font-weight: 500; color: var(--muted)">· pelanggan Ce Silvi</span></p>
       </article>
-      <!-- TODO: tambah screenshot konfirmasi paket diterima berikutnya (blur foto profil), atau hapus kartu ini. -->
       <article class="tcard">
-        <div class="phbox" style="height: 140px">Slot screenshot chat berikutnya<br>(paket diterima)</div>
-        <p style="font-size: 14px; color: var(--muted)">Tambahkan konfirmasi pelanggan lain di sini. Foto profil pelanggan disamarkan.</p>
+        <img class="shot" src="assets/testi-3.webp" alt="Screenshot chat pelanggan: Dvn nya sdh sampai ce, terimakasih" width="780" height="329" loading="lazy" decoding="async">
+        <div style="display: flex; align-items: center; justify-content: space-between">
+          <span class="recv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Paket diterima</span>
+          <span class="small">pukul 13.09</span>
+        </div>
+        <p class="quote">“Dvn nya sdh sampai ce… terimakasih”</p>
+        <p style="font-size: 13px; font-weight: 700">Devi S. <span style="font-weight: 500; color: var(--muted)">· pelanggan Ce Silvi</span></p>
       </article>
     </div>
     <div class="dots" id="dots" aria-hidden="true"><span class="d on"></span><span class="d"></span><span class="d"></span></div>
-    <p class="small" style="margin-top: 16px">Screenshot asli percakapan pelanggan dengan CS Ce Silvi. Foto profil pelanggan disamarkan untuk menjaga privasi.</p>
-    <a class="btn-wa" data-wa="testimoni" href="#order" style="margin: 20px auto 0; max-width: 420px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20l1.2-4.3A8.5 8.5 0 1 1 20.5 11.5z"/></svg>Order sekarang, kami kirim</a>
+    <div class="sec-foot">
+    <p class="small">Screenshot asli percakapan pelanggan dengan CS Ce Silvi. Foto profil pelanggan disamarkan untuk menjaga privasi.</p>
+    <a class="btn-wa" data-wa="testimoni" href="#order"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20l1.2-4.3A8.5 8.5 0 1 1 20.5 11.5z"/></svg>Order sekarang, kami kirim</a>
+    </div>
   </div>
 </section>
 

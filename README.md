@@ -30,7 +30,7 @@ Data 7 bahan (nama, deskripsi, warna, gambar) ada di array `INGREDIENTS` di `<sc
 **Konten & kepatuhan**
 - [ ] Nomor registrasi BPOM & nomor sertifikat Halal (masih `[nomor]`)
 - [ ] Cocokkan deskripsi bahan di `INGREDIENTS` dengan klaim yang disetujui BPOM
-- [ ] Izin pelanggan untuk 3 screenshot testimoni (foto profil sudah diblur)
+- [ ] Izin pelanggan untuk 4 screenshot testimoni (foto profil & label alamat paket sudah diblur)
 - [ ] Konfirmasi Gratis ongkir & COD masih berlaku
 - [ ] Hindari kata: kusam, kasar, glowing, cerah. Pakai: sehat, lembap, kenyal
 - [x] Copy sudah dievaluasi dengan checklist stop-slop (tanpa kalimat pasif tanpa pelaku, tanpa pull-quote, tanpa em dash)
@@ -44,6 +44,6 @@ Setiap gambar dipanggil dengan versi, misalnya `assets/hero-silvi.webp?v=0db66aa
 | `hero-silvi.webp` | Silvia memegang botol & kemasan DVN (dari key visual LP lama), background dihapus | |
 | `bottle.webp`, `tablets.webp` | Foto produk transparan | |
 | `ing-*.webp` | Ikon 7 bahan (dari infografis 7 Kandungan) | `ing-vc.webp` dibuat ulang, belum ada ikon resmi Vitamin C |
-| `testi-1.webp` … `testi-3.webp` | Screenshot chat paket diterima | Foto profil diblur |
+| `testi-1.webp` … `testi-4.webp` | Screenshot chat paket diterima | Foto profil diblur |
 | `cert-halal-*.webp`, `cert-bpom-*.webp`, `badges.webp`, `verified.webp` | Sertifikat, strip logo, kartu VERIFIED | **Ganti dengan file asli resolusi tinggi** (sekarang crop dari screenshot LP lama) |
 | `og-dvn.jpg` | Gambar preview saat link dibagikan | |

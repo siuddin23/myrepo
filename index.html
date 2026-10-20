@@ -39,6 +39,7 @@
       --blush-2: #F3D2DA;
       --rose: #B3264F;
       --rose-d: #7E1636;
+      --pink-accent: #D12F78;
       --ink: #2A1A20;
       --muted: #6B5560;
       --muted-2: #5E4952;
@@ -68,7 +69,7 @@
     .kicker { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--rose); }
     .kicker span { display: inline-grid; place-items: center; min-width: 28px; height: 22px; padding: 0 6px; border-radius: 999px; background: var(--rose); color: #fff; font-size: 11px; letter-spacing: .04em; }
     .h2 { font-size: clamp(32px, 8.6vw, 44px); line-height: 1.08; margin: 14px 0 12px; }
-    .h2 em { color: var(--rose); }
+    .h2 em { color: var(--pink-accent); }
     .sub { font-size: 15px; color: var(--muted); }
     .ph { background: #FFF2C2; color: #5E4800; padding: 0 4px; border-radius: 4px; }
     .phbox { display: grid; place-items: center; text-align: center; padding: 12px; border: 1.5px dashed var(--blush-2); border-radius: 14px; background: repeating-linear-gradient(135deg, #FDF1F3 0 10px, var(--ground) 10px 20px); font-size: 12px; font-weight: 600; color: var(--rose); }
@@ -100,7 +101,7 @@
     .hero-grid { position: relative; z-index: 2; display: grid; }
     .hero-copy { padding-top: 24px; }
     .hero h1 { font-weight: 700; font-size: clamp(32px, 8.6vw, 48px); line-height: 1.1; letter-spacing: -.02em; margin: 14px 0 12px; }
-    .hero h1 em { font-style: italic; font-weight: 600; color: var(--rose); background: linear-gradient(transparent 62%, rgba(255,255,255,.75) 62%, rgba(255,255,255,.75) 92%, transparent 92%); -webkit-box-decoration-break: clone; box-decoration-break: clone; padding: 0 2px; }
+    .hero h1 em { font-style: italic; font-weight: 600; color: var(--pink-accent); background: linear-gradient(transparent 62%, rgba(255,255,255,.75) 62%, rgba(255,255,255,.75) 92%, transparent 92%); -webkit-box-decoration-break: clone; box-decoration-break: clone; padding: 0 2px; }
     .perks { display: flex; flex-wrap: wrap; gap: 8px; }
     .perk { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px 6px 6px; border-radius: 999px; background: #fff; color: var(--rose-d); font-size: 13px; font-weight: 700; box-shadow: 0 6px 16px -12px rgba(126,22,54,.7); }
     .perk i { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: var(--rose); color: #fff; }
@@ -214,7 +215,7 @@
     .track { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 24px 12px; margin: 24px -24px 0; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
     .track::-webkit-scrollbar { display: none; }
     .tcard { flex: 0 0 300px; scroll-snap-align: center; background: #fff; border-radius: 20px; padding: 14px; border: 1px solid var(--line); display: flex; flex-direction: column; gap: 12px; }
-    .shot { width: 100%; height: auto; aspect-ratio: 780 / 378; object-fit: contain; background: #F3F5F8; border-radius: 14px; border: 1px solid #E6E8EE; }
+    .shot { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: contain; background: #F3F5F8; border-radius: 14px; border: 1px solid #E6E8EE; }
     .recv { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; color: var(--wa); background: #E5F5EC; padding: 5px 10px; border-radius: 999px; }
     .recv svg { width: 14px; height: 14px; }
     .quote { font-family: var(--serif); font-style: italic; font-size: 20px; line-height: 1.25; }
@@ -340,7 +341,7 @@
       .dname { font-size: 32px; }
 
       /* Testimoni: grid 3 kolom, tanpa carousel */
-      .track { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; overflow: visible; margin: 32px 0 0; padding: 0; }
+      .track { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; overflow: visible; margin: 32px 0 0; padding: 0; }
       .tcard { flex: none; }
       .sec-foot { margin-top: 40px; }
       .dots { display: none; }
@@ -354,6 +355,11 @@
       .cta .trust { justify-content: flex-start; }
       .cta .btn-wa { max-width: 420px; }
       .cta .badges { margin-left: 0; }
+    }
+
+    @media (min-width: 1100px) {
+      .track { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+      .quote { font-size: 18px; }
     }
 
     @media (min-width: 1360px) {
@@ -627,8 +633,17 @@
         <p class="quote">“Dvn nya sdh sampai ce… terimakasih”</p>
         <p style="font-size: 13px; font-weight: 700">Devi S. <span style="font-weight: 500; color: var(--muted)">· pelanggan Ce Silvi</span></p>
       </article>
+      <article class="tcard">
+        <img class="shot" src="assets/testi-4.webp?v=d48f4cbc" alt="Screenshot chat pelanggan dengan foto paket: Barang sdh nyampek ce, terima kasih" width="780" height="487" loading="lazy" decoding="async">
+        <div style="display: flex; align-items: center; justify-content: space-between">
+          <span class="recv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Paket diterima</span>
+          <span class="small">pukul 14.55</span>
+        </div>
+        <p class="quote">“Barang sdh nyampek ce. Terima kasih”</p>
+        <p style="font-size: 13px; font-weight: 700">Riyani <span style="font-weight: 500; color: var(--muted)">· pelanggan Ce Silvi</span></p>
+      </article>
     </div>
-    <div class="dots" id="dots" aria-hidden="true"><span class="d on"></span><span class="d"></span><span class="d"></span></div>
+    <div class="dots" id="dots" aria-hidden="true"><span class="d on"></span><span class="d"></span><span class="d"></span><span class="d"></span></div>
     <div class="sec-foot">
     <p class="small">Screenshot asli percakapan pelanggan dengan CS Ce Silvi. Kami samarkan foto profil pelanggan untuk menjaga privasi.</p>
     <a class="btn-wa" data-wa="testimoni" href="#order"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20l1.2-4.3A8.5 8.5 0 1 1 20.5 11.5z"/></svg>Order sekarang, kami kirim</a>

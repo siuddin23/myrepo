@@ -20,6 +20,10 @@ Tombol WhatsApp melayang di kanan bawah tampil di semua ukuran layar (di desktop
 
 Data 7 bahan (nama, deskripsi, warna, gambar) ada di array `INGREDIENTS` di `<script>` paling bawah.
 
+## Versi untuk Berdu / website builder
+
+Folder `berdu/` berisi potongan HTML per section untuk ditempel di blok HTML builder (panduan: `berdu/PANDUAN.md`). Folder itu dibuat otomatis dari `index.html`; setelah mengubah `index.html`, jalankan `python3 tools/build_berdu.py`.
+
 ## Checklist sebelum live
 
 **Konfigurasi**

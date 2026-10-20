@@ -1,0 +1,68 @@
+<!-- DVN x Glow Lab | Problem | dibuat otomatis dari index.html oleh tools/build_berdu.py -->
+<div class="dvn-lp">
+<section class="sec" id="dvn-masalah">
+  <div class="wrap">
+    <div>
+      <p class="kicker"><span>01</span>Problem</p>
+      <h2 class="h2">Kamu merasakan <em>ini?</em></h2>
+      <p class="sub">Ketuk keluhan yang sesuai dengan kondisimu.</p>
+    </div>
+    <div class="pgrid">
+      <button type="button" class="pcard" aria-pressed="false">
+        <span class="pbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+        <span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 13.7-5.6L20 8.5"/><path d="M20 4v4.5h-4.5"/><path d="M20 12a8 8 0 0 1-13.7 5.6L4 15.5"/><path d="M4 20v-4.5h4.5"/></svg></span>
+        <span class="pt">Ganti-ganti skincare</span>
+        <span class="pd">Sudah coba banyak serum &amp; krim, hasilnya belum sesuai harapan.</span>
+      </button>
+      <button type="button" class="pcard" aria-pressed="true">
+        <span class="pbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+        <span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3.5 4.5 6 7.6 6 11a6 6 0 0 1-12 0c0-3.4 2.5-6.5 6-11z"/><path d="M9.5 14.5a2.5 2.5 0 0 0 2.5 2.5"/></svg></span>
+        <span class="pt">Kulit cepat kering</span>
+        <span class="pd">Terasa kering &amp; kurang kenyal, apalagi seharian di ruangan ber-AC.</span>
+      </button>
+      <button type="button" class="pcard" aria-pressed="false">
+        <span class="pbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+        <span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></span>
+        <span class="pt">Wajah tampak lelah</span>
+        <span class="pd">Kurang tidur &amp; aktivitas padat bikin kulit terasa kurang sehat.</span>
+      </button>
+      <button type="button" class="pcard" aria-pressed="true">
+        <span class="pbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+        <span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span>
+        <span class="pt">Khawatir soal usia</span>
+        <span class="pd">Mulai memperhatikan garis halus &amp; ingin merawat lebih awal.</span>
+      </button>
+    </div>
+    <div class="split">
+      <div class="result" aria-live="polite">
+        <p style="font-size: 13px; font-weight: 700; color: var(--muted)">Kamu memilih <span style="color: var(--rose)"><span id="dvn-p-count">2</span> dari 4</span> keluhan</p>
+        <div class="meter" aria-hidden="true"><span class="seg on"></span><span class="seg on"></span><span class="seg"></span><span class="seg"></span></div>
+        <p id="dvn-p-msg" style="font-size: 15px; font-weight: 600">Wajar dialami, apalagi dengan aktivitas padat.</p>
+      </div>
+      <div>
+        <p class="insight">Skincare bekerja di permukaan kulit.</p>
+        <p class="sub" style="margin-top: 10px">Nutrisi, jam tidur, stres, dan sinar matahari juga memengaruhi kondisi kulitmu dari dalam.</p>
+        <a class="link-down" href="#dvn-solusi">Lihat solusinya<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+<script>
+(function () {
+  var root = document.getElementById('dvn-masalah'); if (!root || root.__dvn) return; root.__dvn = 1;
+  var MSG = ['Ketuk kartu di atas untuk mulai.', 'Wajar dialami, apalagi dengan aktivitas padat.', 'Wajar dialami, apalagi dengan aktivitas padat.', 'Kulitmu mungkin sedang butuh dukungan lebih.', 'Kulitmu mungkin sedang butuh dukungan lebih.'];
+  var cards = root.querySelectorAll('.pcard'), segs = root.querySelectorAll('.seg');
+  function update() {
+    var n = root.querySelectorAll('.pcard[aria-pressed="true"]').length;
+    document.getElementById('dvn-p-count').textContent = n;
+    document.getElementById('dvn-p-msg').textContent = MSG[n];
+    segs.forEach(function (s, i) { s.classList.toggle('on', i < n); });
+  }
+  cards.forEach(function (c) {
+    c.addEventListener('click', function () {
+      c.setAttribute('aria-pressed', c.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); update();
+    });
+  });
+})();
+</script>

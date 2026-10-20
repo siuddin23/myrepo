@@ -37,6 +37,8 @@ Data 7 bahan (nama, deskripsi, warna, gambar) ada di array `INGREDIENTS` di `<sc
 
 **Gambar** (`assets/`, semua WebP, total ±330 KB; selain foto hero semuanya lazy-load)
 
+Setiap gambar dipanggil dengan versi, misalnya `assets/hero-silvi.webp?v=0db66aa5`. **Kalau mengganti file gambar dengan nama yang sama, ubah juga angka `?v=` di `index.html`** (bebas, asal berbeda), supaya browser pengunjung langsung memuat gambar baru dan tidak memakai salinan lama dari cache.
+
 | File | Isi | Catatan |
 |---|---|---|
 | `hero-silvi.webp` | Silvia memegang botol & kemasan DVN (dari key visual LP lama), background dihapus | |

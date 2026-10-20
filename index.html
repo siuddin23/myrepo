@@ -14,7 +14,7 @@
   <link rel="preload" as="image" href="assets/hero-silvi.webp" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;1,6..96,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;1,6..96,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- TODO: Meta Pixel. Ganti PIXEL_ID lalu hapus tanda komentar.
   <script>
@@ -62,7 +62,8 @@
     :focus-visible { outline: 3px solid #E58AA6; outline-offset: 2px; }
 
     .wrap { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 24px; }
-    .sec { padding: 64px 0; }
+    .sec { padding: 48px 0; }
+    .hero + .sec { padding-top: 20px; }
     .blush { background: var(--blush); }
     .kicker { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--rose); }
     .kicker span { display: inline-grid; place-items: center; min-width: 28px; height: 22px; padding: 0 6px; border-radius: 999px; background: var(--rose); color: #fff; font-size: 11px; letter-spacing: .04em; }
@@ -93,13 +94,17 @@
     .deco.c1 { right: -70px; top: -40px; width: 220px; height: 220px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.9); }
     .deco.c2 { right: -30px; top: 0; width: 140px; height: 140px; border-radius: 50%; border: 1.5px solid rgba(179,38,79,.25); }
     .deco.c3 { left: -90px; top: 330px; width: 200px; height: 200px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.9); }
-    .deco.wave { left: 0; right: 0; bottom: 0; height: 120px; background: var(--ground); border-radius: 50% 50% 0 0 / 70px 70px 0 0; }
+    .deco.wave { left: 0; right: 0; bottom: 0; height: 64px; background: var(--ground); border-radius: 50% 50% 0 0 / 44px 44px 0 0; }
     .spark { position: absolute; width: 18px; height: 18px; color: #fff; animation: twinkle 3.2s ease-in-out infinite; }
     .spark.r { color: var(--rose); }
     .hero-grid { position: relative; z-index: 2; display: grid; }
     .hero-copy { padding-top: 24px; }
-    .hero h1 { font-size: clamp(34px, 9.4vw, 52px); line-height: 1.06; margin: 8px 0 12px; }
-    .hero h1 em { color: var(--rose); }
+    .hero h1 { font-family: var(--sans); font-weight: 800; font-size: clamp(31px, 8.4vw, 46px); line-height: 1.12; letter-spacing: -.025em; margin: 14px 0 12px; }
+    .hero h1 em { font-style: normal; color: var(--rose); background: linear-gradient(transparent 62%, rgba(255,255,255,.75) 62%, rgba(255,255,255,.75) 92%, transparent 92%); -webkit-box-decoration-break: clone; box-decoration-break: clone; padding: 0 2px; }
+    .perks { display: flex; flex-wrap: wrap; gap: 8px; }
+    .perk { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px 6px 6px; border-radius: 999px; background: #fff; color: var(--rose-d); font-size: 13px; font-weight: 700; box-shadow: 0 6px 16px -12px rgba(126,22,54,.7); }
+    .perk i { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: var(--rose); color: #fff; }
+    .perk svg { width: 15px; height: 15px; }
     .lead { font-size: 16px; color: #5A2638; }
     .lead strong { color: var(--ink); }
     .photo { position: relative; width: min(342px, 100%); height: 480px; margin: 18px auto 0; display: flex; justify-content: center; align-items: flex-end; }
@@ -109,7 +114,7 @@
     .tag b { display: inline-flex; align-items: center; gap: 6px; font-size: 15px; }
     .tag b svg { width: 16px; height: 16px; color: #fff; background: #2F80ED; border-radius: 50%; padding: 2px; }
     .tag i { font-size: 11px; color: var(--muted); }
-    .hero-cta { display: flex; flex-direction: column; gap: 16px; margin-top: 20px; padding-bottom: 56px; }
+    .hero-cta { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; padding-bottom: 40px; }
     .trust { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
     .tchip { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; padding: 6px 10px; border-radius: 999px; background: rgba(255,255,255,.8); color: var(--rose-d); }
     .tchip svg { width: 14px; height: 14px; }
@@ -283,7 +288,8 @@
     /* Desktop */
     @media (min-width: 900px) {
       .wrap { max-width: 1160px; }
-      .sec { padding: 104px 0; }
+      .sec { padding: 80px 0; }
+      .hero + .sec { padding-top: 40px; }
       section[id] { scroll-margin-top: 72px; }
 
       /* Header lengket dengan navigasi + tombol WA (sticky CTA bawah tidak dipakai di desktop) */
@@ -298,10 +304,10 @@
 
       /* Hero: copy kiri, foto kanan */
       .hero-grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); column-gap: 56px; align-items: center; }
-      .hero-copy { padding-top: 72px; grid-column: 1; grid-row: 1; align-self: end; }
-      .hero h1 { font-size: clamp(48px, 4.8vw, 64px); max-width: 620px; }
+      .hero-copy { padding-top: 56px; grid-column: 1; grid-row: 1; align-self: end; }
+      .hero h1 { font-size: clamp(44px, 4.4vw, 58px); max-width: 640px; margin-top: 18px; }
       .lead { font-size: 18px; max-width: 520px; }
-      .hero-cta { grid-column: 1; grid-row: 2; align-self: start; margin-top: 12px; padding-bottom: 120px; }
+      .hero-cta { grid-column: 1; grid-row: 2; align-self: start; margin-top: 12px; padding-bottom: 88px; }
       .hero-cta .trust { justify-content: flex-start; }
       .hero-cta .btn-wa { align-self: flex-start; padding: 0 32px; }
       .hero-cta .note { text-align: left; }
@@ -343,7 +349,7 @@
     }
 
     @media (min-width: 1360px) {
-      .hero h1 { font-size: 68px; }
+      .hero h1 { font-size: 62px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -388,6 +394,10 @@
 
   <div class="wrap hero-grid">
     <div class="hero-copy">
+      <ul class="perks" aria-label="Layanan pengiriman" style="list-style: none; margin: 0; padding: 0">
+        <li class="perk"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></i>Gratis Ongkir</li>
+        <li class="perk"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6.5 9.5v.01M17.5 14.5v.01"/></svg></i>Bisa COD</li>
+      </ul>
       <h1>Skincare sudah rutin, tapi kulit masih terasa <em>kering &amp; kurang kenyal?</em></h1>
       <p class="lead">Bisa jadi kulitmu juga butuh dukungan <strong>dari dalam</strong> supaya tetap sehat, lembap &amp; kenyal.</p>
     </div>
@@ -576,7 +586,7 @@
       <h2 class="h2">Paket DVN sudah <em>sampai di tangan mereka</em></h2>
       <p class="sub" style="color: var(--muted-2)">Konfirmasi langsung dari pelanggan Ce Silvi setelah paketnya diterima.</p>
       <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px">
-        <span class="chipx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>Free ongkir</span>
+        <span class="chipx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>Gratis ongkir</span>
         <span class="chipx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/></svg>Bisa COD</span>
         <span class="chipx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Produk asli</span>
       </div>
@@ -671,7 +681,7 @@
     <p style="font-size: 15px; color: #D9C9CE; margin-bottom: 24px">Bantu jaga kulit tetap sehat, lembap &amp; kenyal dari dalam. Ceritakan kondisi kulitmu ke Ce Silvi, konsultasi gratis tanpa kewajiban membeli.</p>
     <a class="btn-wa" data-wa="final" href="#order"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20l1.2-4.3A8.5 8.5 0 1 1 20.5 11.5z"/></svg>Konsultasi Gratis via WhatsApp</a>
     <div class="trust" style="margin-top: 18px">
-      <span class="tchip">Free ongkir</span><span class="tchip">Bisa COD</span><span class="tchip">Produk asli</span><span class="tchip">Tanpa pemutih</span>
+      <span class="tchip">Gratis ongkir</span><span class="tchip">Bisa COD</span><span class="tchip">Produk asli</span><span class="tchip">Tanpa pemutih</span>
     </div>
     <img class="badges" src="assets/badges.webp" alt="Logo Halal, BPOM, ISO 9001 dan sertifikasi mutu lainnya" width="408" height="62" loading="lazy" decoding="async" style="margin-top: 20px">
     <p class="fine" style="margin-top: 32px">Suplemen ini tidak memberikan hasil instan. Hasil dapat bervariasi tergantung kondisi tubuh masing-masing. Tidak untuk menggantikan makanan utama.</p>

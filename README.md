@@ -31,7 +31,7 @@ Data 7 bahan (nama, deskripsi, warna, gambar) ada di array `INGREDIENTS` di `<sc
 - [ ] Nomor registrasi BPOM & nomor sertifikat Halal (masih `[nomor]`)
 - [ ] Cocokkan deskripsi bahan di `INGREDIENTS` dengan klaim yang disetujui BPOM
 - [ ] Izin pelanggan untuk 3 screenshot testimoni (foto profil sudah diblur)
-- [ ] Konfirmasi Free ongkir & COD masih berlaku
+- [ ] Konfirmasi Gratis ongkir & COD masih berlaku
 - [ ] Hindari kata: kusam, kasar, glowing, cerah. Pakai: sehat, lembap, kenyal
 
 **Gambar** (`assets/`, semua WebP, total ±330 KB; selain foto hero semuanya lazy-load)

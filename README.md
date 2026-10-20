@@ -16,7 +16,7 @@ Desain mobile-first dan adaptif: HP (<640 px), tablet (640â€“899 px), desktop (â
 | 5 | Sertifikat: Halal, BPOM, cek keaslian, dealer terverifikasi | `#sertifikat` | |
 | 6 | CTA akhir | `#order` | |
 
-Sticky CTA WhatsApp muncul di HP setelah tombol hero terlewati. Semua animasi mati otomatis jika perangkat memakai pengaturan *reduce motion*.
+Tombol WhatsApp melayang di kanan bawah tampil di semua ukuran layar (di desktop muncul label "Chat Ce Silvi" saat di-hover). Semua animasi mati otomatis jika perangkat memakai pengaturan *reduce motion*.
 
 Data 7 bahan (nama, deskripsi, warna, gambar) ada di array `INGREDIENTS` di `<script>` paling bawah.
 
@@ -24,7 +24,7 @@ Data 7 bahan (nama, deskripsi, warna, gambar) ada di array `INGREDIENTS` di `<sc
 
 **Konfigurasi**
 - [ ] `WA_NUMBER` di bagian `<script>` paling bawah: nomor WA Ce Silvi (format `628...`)
-- [ ] Meta Pixel di `<head>`: ganti `PIXEL_ID` lalu aktifkan. Setiap klik tombol WA mengirim event `Contact` dengan `content_name` = posisi tombol (`wa_header`, `wa_hero`, `wa_solusi`, `wa_testimoni`, `wa_final`, `wa_sticky`)
+- [ ] Meta Pixel di `<head>`: ganti `PIXEL_ID` lalu aktifkan. Setiap klik tombol WA mengirim event `Contact` dengan `content_name` = posisi tombol (`wa_header`, `wa_hero`, `wa_solusi`, `wa_testimoni`, `wa_final`, `wa_float`)
 - [ ] `og:image` memakai path relatif; ganti ke URL absolut setelah domain final diketahui
 
 **Konten & kepatuhan**

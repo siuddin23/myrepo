@@ -252,10 +252,17 @@
     .cta .inner { max-width: 560px; margin: 0 auto; }
     .fine { font-size: 12px; color: #A8989E; line-height: 1.6; }
 
-    /* Sticky CTA (mobile) */
-    .sticky { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; display: flex; align-items: center; gap: 12px; padding: 10px 12px calc(12px + env(safe-area-inset-bottom)) 16px; background: rgba(255,249,248,.95); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-top: 1px solid var(--line); transform: translateY(110%); transition: transform .3s ease; }
-    .sticky.show { transform: none; }
-    .sticky .btn-wa { min-height: 48px; padding: 0 18px; font-size: 14px; flex: none; }
+    /* Tombol WhatsApp melayang (semua ukuran layar) */
+    .fab { position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); z-index: 70; display: flex; align-items: center; gap: 10px; text-decoration: none; animation: fab-in .5s .8s cubic-bezier(.3,1.4,.5,1) both; }
+    .fab-btn { position: relative; width: 60px; height: 60px; border-radius: 50%; background: #25D366; color: #fff; display: grid; place-items: center; box-shadow: 0 12px 28px -10px rgba(18,140,70,.75), 0 2px 6px rgba(0,0,0,.12); transition: transform .2s; }
+    .fab-btn::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: #25D366; animation: fab-ping 2.4s ease-out infinite; z-index: -1; }
+    .fab-btn svg { width: 32px; height: 32px; }
+    .fab:hover .fab-btn, .fab:focus-visible .fab-btn { transform: scale(1.06); }
+    .fab:active .fab-btn { transform: scale(.95); }
+    .fab-label { display: none; background: #fff; color: var(--ink); font-size: 14px; font-weight: 700; padding: 10px 14px; border-radius: 999px; box-shadow: 0 10px 24px -14px rgba(42,26,32,.6); white-space: nowrap; }
+    .fab-label small { display: block; font-size: 11px; font-weight: 500; color: var(--muted); }
+    @keyframes fab-in { from { opacity: 0; transform: translateY(16px) scale(.8); } to { opacity: 1; transform: none; } }
+    @keyframes fab-ping { 0% { transform: scale(1); opacity: .45; } 70%, 100% { transform: scale(1.6); opacity: 0; } }
 
     /* Muncul saat di-scroll (hanya bila JS aktif) */
     .js .rv { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1); }
@@ -292,7 +299,7 @@
       .hero + .sec { padding-top: 40px; }
       section[id] { scroll-margin-top: 72px; }
 
-      /* Header lengket dengan navigasi + tombol WA (sticky CTA bawah tidak dipakai di desktop) */
+      /* Header lengket dengan navigasi + tombol WA */
       .top { position: sticky; top: 0; z-index: 60; height: 68px; transition: box-shadow .3s; }
       .top.scrolled { box-shadow: 0 8px 24px -16px rgba(126,22,54,.55); }
       .top-in { justify-content: space-between; padding: 0 40px; }
@@ -300,7 +307,10 @@
       .topnav a { color: var(--rose-d); text-decoration: none; font-size: 14px; font-weight: 600; padding: 8px 0; border-bottom: 2px solid transparent; transition: border-color .2s; }
       .topnav a:hover { border-bottom-color: var(--rose); }
       .top-wa { display: inline-flex; min-height: 44px; padding: 0 18px; font-size: 14px; }
-      .sticky { display: none; }
+      .fab { right: 28px; bottom: 28px; }
+      .fab-label { display: block; opacity: 0; transform: translateX(8px); transition: opacity .25s, transform .25s; pointer-events: none; }
+      .fab:hover .fab-label, .fab:focus-visible .fab-label { opacity: 1; transform: none; }
+      .fab-btn { width: 64px; height: 64px; }
 
       /* Hero: copy kiri, foto kanan */
       .hero-grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); column-gap: 56px; align-items: center; }
@@ -692,13 +702,10 @@
 
 </main>
 
-<div class="sticky" id="sticky">
-  <div style="flex: 1; min-width: 0">
-    <p style="font-weight: 700; font-size: 14px">Konsultasi gratis</p>
-    <p class="small">Tanya dulu, tidak wajib beli</p>
-  </div>
-  <a class="btn-wa" data-wa="sticky" href="#order"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20l1.2-4.3A8.5 8.5 0 1 1 20.5 11.5z"/></svg>Chat WhatsApp</a>
-</div>
+<a class="fab" data-wa="float" href="#order" aria-label="Chat WhatsApp dengan Ce Silvi, konsultasi gratis">
+  <span class="fab-label" aria-hidden="true">Chat Ce Silvi<small>Konsultasi gratis</small></span>
+  <span class="fab-btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></span>
+</a>
 
 <script>
 (function () {
@@ -711,7 +718,7 @@
     solusi: 'Halo Ce Silvi, saya mau tahu lebih lanjut tentang DVN.',
     testimoni: 'Halo Ce Silvi, saya mau order DVN, tolong dibantu kirim ya.',
     final: 'Halo Ce Silvi, saya mau konsultasi dan order DVN.',
-    sticky: 'Halo Ce Silvi, saya mau konsultasi soal DVN.',
+    float: 'Halo Ce Silvi, saya mau konsultasi soal DVN.',
     header: 'Halo Ce Silvi, saya mau konsultasi gratis soal DVN.'
   };
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -900,21 +907,6 @@
     rv.forEach(function (el) { el.classList.add('in'); });
   }
 
-  // ===== Sticky CTA mobile: muncul setelah tombol hero lewat, sembunyi di section CTA akhir =====
-  (function () {
-    var sticky = document.getElementById('sticky');
-    var heroBtn = document.querySelector('[data-wa="hero"]');
-    var finalSec = document.getElementById('order');
-    if (!('IntersectionObserver' in window) || !sticky) return;
-    var heroGone = false, finalVisible = false;
-    function update() { sticky.classList.toggle('show', heroGone && !finalVisible); }
-    new IntersectionObserver(function (e) {
-      heroGone = !e[0].isIntersecting && e[0].boundingClientRect.top < 0; update();
-    }).observe(heroBtn);
-    new IntersectionObserver(function (e) {
-      finalVisible = e[0].isIntersecting; update();
-    }).observe(finalSec);
-  })();
 })();
 </script>
 </body>

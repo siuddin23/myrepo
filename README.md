@@ -23,8 +23,8 @@ Data 7 bahan (nama, deskripsi, warna, gambar) ada di array `INGREDIENTS` di `<sc
 ## Checklist sebelum live
 
 **Konfigurasi**
-- [ ] `WA_NUMBER` di bagian `<script>` paling bawah: nomor WA Ce Silvi (format `628...`)
-- [ ] Meta Pixel di `<head>`: ganti `PIXEL_ID` lalu aktifkan. Setiap klik tombol WA mengirim event `Contact` dengan `content_name` = posisi tombol (`wa_header`, `wa_hero`, `wa_solusi`, `wa_testimoni`, `wa_final`, `wa_float`)
+- [x] `WA_NUMBER` sudah diisi: +62 812-8333-5822 (`6281283335822`) untuk semua tombol WhatsApp
+- [ ] Meta Pixel di `<head>`: ganti `PIXEL_ID` (ambil dari LP lama / Events Manager) lalu aktifkan. Setiap klik tombol WA mengirim event `Contact` dengan `content_name` = posisi tombol (`wa_header`, `wa_hero`, `wa_solusi`, `wa_testimoni`, `wa_final`, `wa_float`)
 - [ ] `og:image` memakai path relatif; ganti ke URL absolut setelah domain final diketahui
 
 **Konten & kepatuhan**
@@ -33,12 +33,13 @@ Data 7 bahan (nama, deskripsi, warna, gambar) ada di array `INGREDIENTS` di `<sc
 - [ ] Izin pelanggan untuk 3 screenshot testimoni (foto profil sudah diblur)
 - [ ] Konfirmasi Gratis ongkir & COD masih berlaku
 - [ ] Hindari kata: kusam, kasar, glowing, cerah. Pakai: sehat, lembap, kenyal
+- [x] Copy sudah dievaluasi dengan checklist stop-slop (tanpa kalimat pasif tanpa pelaku, tanpa pull-quote, tanpa em dash)
 
 **Gambar** (`assets/`, semua WebP, total ±330 KB; selain foto hero semuanya lazy-load)
 
 | File | Isi | Catatan |
 |---|---|---|
-| `hero-silvi.webp` | Ce Silvi memegang produk, background sudah dihapus | |
+| `hero-silvi.webp` | Silvia memegang botol & kemasan DVN (dari key visual LP lama), background dihapus | |
 | `bottle.webp`, `tablets.webp` | Foto produk transparan | |
 | `ing-*.webp` | Ikon 7 bahan (dari infografis 7 Kandungan) | `ing-vc.webp` dibuat ulang, belum ada ikon resmi Vitamin C |
 | `testi-1.webp` … `testi-3.webp` | Screenshot chat paket diterima | Foto profil diblur |

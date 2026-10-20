@@ -25,15 +25,14 @@ KEYFRAMES = ['spin', 'float', 'breathe', 'ping', 'rise', 'pop', 'fill', 'nudge',
              'fab-in', 'fab-ping']
 
 SECTIONS = [  # (file, judul, penanda awal, penanda akhir)
-    ('01-header.html', 'Header (logo + menu)', '<header class="top"', '</header>'),
-    ('02-hero.html', 'Hero', '<section class="hero"', '</section>'),
-    ('03-problem.html', 'Problem', '<section class="sec" id="masalah"', '</section>'),
-    ('04-solusi.html', 'Solusi', '<section class="sec blush" id="solusi"', '</section>'),
-    ('05-komposisi.html', 'Komposisi (interaktif)', '<section class="sec" id="komposisi"', '</section>'),
-    ('06-testimoni.html', 'Testimoni', '<section class="sec blush" id="testimoni"', '</section>'),
-    ('07-sertifikat.html', 'Sertifikat', '<section class="sec" id="sertifikat"', '</section>'),
-    ('08-cta.html', 'CTA akhir', '<section class="sec cta" id="order"', '</section>'),
-    ('09-tombol-wa-melayang.html', 'Tombol WhatsApp melayang', '<a class="fab"', '</a>'),
+    ('01-hero.html', 'Hero (logo DVN x Glow Lab + menu + hero)', '<section class="hero"', '</section>'),
+    ('02-problem.html', 'Problem', '<section class="sec" id="masalah"', '</section>'),
+    ('03-solusi.html', 'Solusi', '<section class="sec blush" id="solusi"', '</section>'),
+    ('04-komposisi.html', 'Komposisi (interaktif)', '<section class="sec" id="komposisi"', '</section>'),
+    ('05-testimoni.html', 'Testimoni', '<section class="sec blush" id="testimoni"', '</section>'),
+    ('06-sertifikat.html', 'Sertifikat', '<section class="sec" id="sertifikat"', '</section>'),
+    ('07-cta.html', 'CTA akhir', '<section class="sec cta" id="order"', '</section>'),
+    ('08-tombol-wa-melayang.html', 'Tombol WhatsApp melayang', '<a class="fab"', '</a>'),
 ]
 
 
@@ -300,20 +299,24 @@ def main():
 
     for fname, title, start, end in SECTIONS:
         html = transform_html(extract(body, start, end), base, wa_number, messages)
+        if fname.startswith('01'):
+            bar = transform_html(extract(body, '<header class="top"', '</header>'), base, wa_number, messages)
+            bar = bar.replace('<header ', '<div ', 1)[:-len('</header>')] + '</div>'
+            html = bar + '\n' + html
         script = ''
-        if fname.startswith('03'):
+        if fname.startswith('02'):
             script = PROBLEM_SCRIPT
-        elif fname.startswith('05'):
+        elif fname.startswith('04'):
             html = re.sub(r'(<span class="beam"[^>]*></span>\s*<div class="bottle-wrap".*?</div>)',
                           lambda m: m.group(1) + '\n' + static_orbit(ingredients), html, flags=re.S)
             html = html.replace('<div class="anim" id="dvn-dbody"></div>', '<div class="anim" id="dvn-dbody">%s</div>' % static_card(ingredients))
             script = KOMPOSISI_SCRIPT % {'ingredients': ingredients.strip()}
-        elif fname.startswith('06'):
+        elif fname.startswith('05'):
             script = TESTI_SCRIPT
         files[fname] = (head_note % title) + '<div class="dvn-lp">\n' + html + '\n</div>\n' + (script + '\n' if script else '')
 
-    # satu blok berisi semuanya (tanpa header: Berdu biasanya punya header sendiri)
-    allin = files['00-global.html'] + '\n'.join(v for k, v in sorted(files.items()) if k[:2] not in ('00', '01'))
+    # satu blok berisi semuanya
+    allin = files['00-global.html'] + '\n'.join(v for k, v in sorted(files.items()) if k[:2] != '00')
     files['lp-lengkap-1-blok.html'] = allin
     # file pratinjau lokal: buka di browser untuk mengecek semua potongan
     files['preview.html'] = ('<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'

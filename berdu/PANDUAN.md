@@ -15,15 +15,14 @@ File di folder ini adalah potongan HTML per section, siap ditempel di blok **HTM
 
 | File | Isi |
 |---|---|
-| `01-header.html` | Logo + menu + tombol WA. **Opsional**: lewati jika memakai header bawaan Berdu |
-| `02-hero.html` | Hero: judul, foto Silvia, Gratis Ongkir / COD, tombol WA |
-| `03-problem.html` | Checklist keluhan (interaktif) |
-| `04-solusi.html` | Solusi + 2 tablet/hari + keunggulan |
-| `05-komposisi.html` | Orbit 7 bahan (interaktif) |
-| `06-testimoni.html` | 4 screenshot paket diterima |
-| `07-sertifikat.html` | Sertifikat Halal & BPOM, cara cek keaslian, dealer terverifikasi |
-| `08-cta.html` | Ajakan akhir |
-| `09-tombol-wa-melayang.html` | Tombol WhatsApp bulat di kanan bawah |
+| `01-hero.html` | Logo DVN × Glow Lab + menu (desktop) + hero: judul, foto Silvia, Gratis Ongkir / COD, tombol WA |
+| `02-problem.html` | Checklist keluhan (interaktif) |
+| `03-solusi.html` | Solusi + 2 tablet/hari + keunggulan |
+| `04-komposisi.html` | Orbit 7 bahan (interaktif) |
+| `05-testimoni.html` | 4 screenshot paket diterima |
+| `06-sertifikat.html` | Sertifikat Halal & BPOM, cara cek keaslian, dealer terverifikasi |
+| `07-cta.html` | Ajakan akhir |
+| `08-tombol-wa-melayang.html` | Tombol WhatsApp bulat di kanan bawah |
 
 Section bisa dihapus atau ditukar urutannya, asal `00-global.html` tetap ada di atas.
 
